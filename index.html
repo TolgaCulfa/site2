@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkNW Abone Rol Botu | Discord Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://cdn.discordapp.com/attachments/123456789/123456789/darknw-logo.png" alt="DarkNW Logo" onerror="this.src='https://via.placeholder.com/40'"> 
+                    <span>DarkNW Abone Bot</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Ana Sayfa</a></li>
+                    <li><a href="#features">Özellikler</a></li>
+                    <li><a href="#commands">Komutlar</a></li>
+                    <li><a href="#setup">Kurulum</a></li>
+                    <li><a href="https://discord.gg/darknw" target="_blank" class="discord-btn">
+                        <i class="fab fa-discord"></i> Destek Sunucusu
+                    </a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Bölümü -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Aboneleriniz İçin Otomatik Rol">Aboneleriniz İçin Otomatik Rol</h1>
+                <p>YouTube/Twitch abonelerine otomatik rol veren Discord botu. Kolay kurulum, güçlü yönetim!</p>
+                <div class="hero-buttons">
+                    <a href="https://discord.com/oauth2/authorize?client_id=BOT_ID&scope=bot&permissions=8" class="btn btn-primary">
+                        <i class="fas fa-robot"></i> Botu Davet Et
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-chevron-down"></i> Özellikleri Keşfet
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="serverCount">0</span>
+                        <span class="stat-label">Sunucu</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="userCount">0</span>
+                        <span class="stat-label">Kullanıcı</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="verifiedCount">0</span>
+                        <span class="stat-label">Onaylanan Abone</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdn.discordapp.com/attachments/123456789/123456789/abone-bot-preview.png" alt="Abone Bot Önizleme" onerror="this.src='https://via.placeholder.com/500x300'">
+                <div class="blob"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Özellikler Bölümü -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Neden DarkNW Abone Botu?</h2>
+                <p>İşte botumuzun sunduğu benzersiz özellikler</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube Entegrasyonu</h3>
+                    <p>Abonelikleri otomatik kontrol eder ve rol verir. API bağlantısı ile çalışır.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fab fa-twitch"></i>
+                    </div>
+                    <h3>Twitch Entegrasyonu</h3>
+                    <p>Twitch aboneleri için özel rol yönetimi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Güvenli Doğrulama</h3>
+                    <p>Sahte abonelikleri engellemek için gelişmiş filtreleme.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Özelleştirme</h3>
+                    <p>Rol isimleri, mesajlar ve kurallar tamamen size özel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Bildirimler</h3>
+                    <p>Yeni abonelere özel hoş geldin mesajları gönderir.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>İstatistikler</h3>
+                    <p>Abone sayılarınızı detaylı grafiklerle takip edin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Komutlar Bölümü -->
+    <section id="commands" class="commands">
+        <div class="container">
+            <div class="section-header">
+                <h2>Komutlar</h2>
+                <p>Tüm komutlar slash (/) sistemi ile çalışır</p>
+            </div>
+            <div class="commands-container">
+                <div class="command-tabs">
+                    <button class="tab-btn active" data-category="all">Tümü</button>
+                    <button class="tab-btn" data-category="setup">Kurulum</button>
+                    <button class="tab-btn" data-category="verify">Doğrulama</button>
+                </div>
+                <div class="commands-list">
+                    <div class="discord-message-container">
+                        <div class="discord-message command-item" data-category="all setup">
+                            <div class="message-avatar">
+                                <span>/</span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-command">abone-ayarla</div>
+                                <div class="message-description">Abone rolü ve kanallarını yapılandırır</div>
+                            </div>
+                        </div>
+                        <div class="discord-message command-item" data-category="all verify">
+                            <div class="message-avatar">
+                                <span>/</span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-command">abone-ol</div>
+                                <div class="message-description">YouTube/Twitch aboneliğinizi doğrulatır</div>
+                            </div>
+                        </div>
+                        <div class="discord-message command-item" data-category="all setup">
+                            <div class="message-avatar">
+                                <span>/</span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-command">abone-kanal</div>
+                                <div class="message-description">Doğrulama mesajlarının gönderileceği kanalı seçer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kurulum Bölümü -->
+    <section id="setup" class="setup">
+        <div class="container">
+            <div class="section-header">
+                <h2>3 Adımda Kurulum</h2>
+                <p>Botu sunucunuza ekleyin ve abone sistemini başlatın</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Botu Davet Edin</h3>
+                    <p>Yönetici izinleri ile botu sunucunuza ekleyin.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Ayarları Yapın</h3>
+                    <p><code>/abone-ayarla</code> komutu ile rol ve kanalları seçin.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Yayına Alın</h3>
+                    <p><code>/abone-kanal</code> ile duyuru kanalını belirleyin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://cdn.discordapp.com/attachments/123456789/123456789/darknw-logo.png" alt="DarkNW Logo">
+                    <span>DarkNW Abone Bot</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Bağlantılar</h3>
+                        <ul>
+                            <li><a href="#home">Ana Sayfa</a></li>
+                            <li><a href="#features">Özellikler</a></li>
+                            <li><a href="#commands">Komutlar</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Destek</h3>
+                        <ul>
+                            <li><a href="https://discord.gg/darknw">Discord Sunucusu</a></li>
+                            <li><a href="#">Gizlilik Politikası</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 DarkNW.xyz - Tüm Hakları Saklıdır</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
